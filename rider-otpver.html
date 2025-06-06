@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./output.css">
+    <style>
+        .bdarrow{
+            margin-bottom: 20px;
+        }
+        .arrow{
+            font-size: 36px;
+            margin: 12px;
+        }
+        .text{
+            font-size: 24px;
+            font-weight: 600;
+            padding: 8px;
+            margin-top: 28px;
+        }
+        .inpt{
+            border-width: 2px;
+            border-color: oklch(80.9% 0.105 251.813);
+            border-radius: 12px;
+            width: calc(11/12 * 100%);
+            margin-left: 12px;
+            margin-right: 12px;
+            margin-top: 16px;
+            height: 40px;
+            padding: 16px;
+        }
+        .bgbutton{
+            display: grid;
+            place-items: center;
+        }
+        .button{
+            margin: 20px;
+            border-width: 2px;
+            border-color: oklch(80.9% 0.105 251.813);
+            background-color: oklch(70.7% 0.165 254.624);
+            color: #ffffff;
+            font-weight: 600;
+            border-radius: calc(infinity * 1px);
+            width: calc(11/12 * 100%);
+            margin-left: 12px;
+            margin-right: 12px;
+            margin-top: 40px;
+            height: 40px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="bdarrow">
+            <section class="arrow">&#8592</section>
+        </div>
+    </header>
+    <main>
+        <h1 class="text">Enter your mobile number to get OTP</h1>
+        <input type="tel" value="+91    " class="inpt">
+    </main>
+    <footer>
+        <div class="bgbutton">
+            <button type="button" class="button"><a href="verify.html">Get OTP</a></button>
+        </div>
+    </footer>
+</body>
+</html>

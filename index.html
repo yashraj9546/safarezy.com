@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafarEZY.com</title>
+    <link rel="stylesheet" href="./output.css">
+    <style>
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        }
+
+        body, html {
+        height: 100%;
+        font-family: 'Segoe UI', sans-serif;
+        }
+
+        .bg {
+        background: url('/image/village.jpg') no-repeat center center/cover;
+        height: 100vh;
+        display: grid;
+        place-items: center;
+        }
+
+        .content {
+        text-align: center;
+        color: white;
+        backdrop-filter: blur(4px);
+        padding: 20px;
+        }
+
+        .rickshaw-icon {
+        width: 80px;
+        margin-bottom: 20px;
+        backdrop-filter: blur(4px);
+        }
+
+        h1 {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+        }
+
+        .get-started-btn {
+        display: inline-block;
+        padding: 12px 24px;
+        background: #fff;
+        color: #333;
+        border-radius: 30px;
+        font-weight: bold;
+        text-decoration: none;
+        transition: background 0.3s ease;
+        }
+
+        .get-started-btn:hover {
+        background: #e0e0e0;
+        }
+
+    </style>
+</head>
+<body class="bg">
+    <header>
+        <div>
+            <img src="/image/pin (1).png" alt="image not found" class="rickshaw-icon">
+        </div>
+        <div>
+            <img src="/image/tuk-tuk.png" alt="" class="rickshaw-icon">
+        </div>
+    </header>
+    <main>
+        <div class="content">
+            <h1>Enjoy the ride</h1>
+            <div>
+                <button class="get-started-btn"><a href="sign-in.php">Get Started</a></button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
