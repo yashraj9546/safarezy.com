@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>auto card</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="./rating.js"></script>
+    <style>
+        .bg{
+            background-color: #f3f4f6;
+            display: grid;
+            place-items: center;
+        }
+        .container{
+            max-width: 400px;
+        }
+        .ddb{
+            margin: 16px;
+            font-size: 48px;
+            font-weight: 500;
+        }
+        @media (width >= 640px) {
+            .ddb{
+                display: none;
+            }
+            .card{
+                max-width: 25vw;
+            }
+        }
+        .ddb-cont{
+            display: hidden;
+            position: absolute;
+            left: 0px;
+            margin-top: 8px;
+            width: 192px;
+            background-color: white;
+            border-width: 1px;
+            border-color: #e5e7eb;
+            border-radius: 6px;
+            box-shadow: #e5e7eb;
+        }
+        @media (width >= 640px) {
+            .ddb-cont{
+                display: hidden;
+            }
+        }
+        .back{
+            display: block;
+            padding-inline: 16px;
+            padding-block: 8px;
+            color: #1e2939;
+        }
+        .back:hover {
+            background-color: #e5e7eb;
+        }
+        .logout{
+            display: block;
+            padding-inline: 16px;
+            padding-block: 8px;
+            font-weight: 600;
+            color: oklch(70.4% 0.191 22.216);
+        }
+        .hey{
+            font-size: 36px;
+            font-weight: 700;
+            color: #000000;
+        }
+        .name{
+            font-size: 30px;
+            font-weight: 600;
+            color: oklch(87.9% 0.169 91.605);
+        }
+        .here{
+            font-size: 20px;
+            font-weight: 300;
+            text-align: center;
+            margin: 20px;
+        }
+        .card{
+            width: 70vw;
+            margin: 40px;
+            margin-inline: auto;
+            background-color: #ffffff;
+            border-radius: 16px;
+            box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+            overflow: hidden;
+            padding: 16px;
+        }
+
+        .info{
+            display: flex;
+            align-items: center;
+            margin-inline-start: 16px;
+
+        }
+        .dphoto{
+            height: 64px;
+            width: 64px;
+            margin-right: 15px;
+            border-radius: calc(infinity * 1px);
+            object-fit: cover;
+        }
+        .dname{
+            font-size: 20px;
+            font-weight: 600;
+        }
+        .vinfo{
+            color: #4a5565;
+        }
+        .price{
+            color: oklch(62.7% 0.194 149.214);
+        }
+        .carimg{
+            display: grid;
+            place-items: center;
+        }
+        .carimg-in{
+            width: 192px;
+            margin-top: 8px;
+        }
+        .freebtn{
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .freetxt{
+            font-size: 24px;
+        }
+        .btn{
+            margin-top: 30px;
+            background-color: #155dfc;
+            color: #ffffff;
+            font-weight: 600;
+            padding-inline: 16px;
+            padding-block: 8px;
+            border-radius: 8px;
+        }
+
+        .rating-section {
+            margin-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .stars {
+            font-size: 2em;
+            color: #ccc; /* Default star color (unfilled) */
+            cursor: pointer;
+            margin-bottom: 15px;
+        }
+
+        .stars i {
+            transition: color 0.2s ease-in-out;
+        }
+
+        .stars i:hover,
+        .stars i.hovered {
+            color: #ffc107; /* Gold color on hover */
+        }
+
+        .stars i.filled {
+            color: #ffc107; /* Gold color for filled stars */
+        }
+
+        #rating-message {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .average-rating {
+            margin-top: 20px;
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+        }
+
+        .display-stars-container i {
+            font-size: 1.5em;
+            color: #ffc107; /* Gold color for display stars */
+        }
+        .downarr{
+            display: grid;
+            place-items: center;
+        }
+    </style>
+</head>
+<body class="bg">
+    <div class="container">
+        <div class="card">
+            <div class="info">
+                <img class="dphoto" src="/image/user.png" alt="Driver Photo">
+                <div>
+                    <h2 class="dname">name</h2>
+                </div>
+            </div>
+            <div class="freebtn">
+                <div class="average-rating">
+                    <h3>Average Rating: <span class="avg-rating-display"></span></h3>
+                    <div class="display-stars-container">
+                            </div>
+                </div>
+                <a href="tel:' . $number . '"><button class="btn">
+                    Book Now
+                </button></a>
+            </div>
+            <div class="downarr">
+                <span style='font-size:20px;' class="dwn-arrow">&#11167;</span>
+            </div>
+            <div class="rating-section">
+                <h2>Rate this rider</h2>
+                <div class="stars">
+                    <i class="fa-regular fa-star" data-rating="1"></i>
+                    <i class="fa-regular fa-star" data-rating="2"></i>
+                    <i class="fa-regular fa-star" data-rating="3"></i>
+                    <i class="fa-regular fa-star" data-rating="4"></i>
+                    <i class="fa-regular fa-star" data-rating="5"></i>
+                </div>
+                <div class="rating-message"></div>
+            </div>
+        </div>
+    </div>
+
+<script>
+    const down = document.getElementsByClassName('dwn-arrow');
+    const rate = document.getElementsByClassName('rating-section');
+
+    // Initially hide the rating section
+    rate.classList.add('hidden'); 
+
+    down.addEventListener('click', (event) => {
+        // Stop event propagation to prevent the window click listener from immediately closing it
+        event.stopPropagation(); 
+        rate.classList.toggle('hidden');
+    });
+
+    // Close dropdown if clicked outside
+    window.addEventListener('click', (e) => {
+        // If the click is not on the down button and not inside the rate section
+        if (!down.contains(e.target) && !rate.contains(e.target)) {
+            rate.classList.add('hidden');
+        }
+    });
+</script>
+
+<style>
+    .hidden { display: none; }
+    /* .fixed is not used in your JS, so it's fine, but good to note it's there */
+    .fixed { position: fixed; top: 0; left: 0; width: 100%; height: 100%; } 
+</style>
+
+</body>
+</html>
